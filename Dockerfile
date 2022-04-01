@@ -7,5 +7,5 @@ RUN unzip awscliv2.zip && ./aws/install
 RUN curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add -
 RUN apt-get install -y gnupg  software-properties-common
 RUN apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-RUN apt update 
-RUN apt-get install terraform ansible -y
+RUN apt update && apt-get install terraform ansible nodejs npm -y
+RUN npm install -g serverless
